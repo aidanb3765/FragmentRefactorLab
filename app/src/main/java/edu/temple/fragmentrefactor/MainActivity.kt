@@ -11,6 +11,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        
+        // Use instance of the activity with a fragment transaction
+        if (savedInstanceState == null) {
+            val fragmentTransaction = supportFragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragmentContainerView, FragmentMain())
+            fragmentTransaction.commit()
+        }
     }
 }
